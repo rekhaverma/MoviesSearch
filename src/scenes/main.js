@@ -1,7 +1,6 @@
 import React from "react";
-import { Text, View, FlatList } from "react-native";
-import { SearchInput } from "../components";
-
+import { Text, View } from "react-native";
+import { SearchInput, SearchResultList } from "../components";
 import config from "../../config";
 import styles from "../styles";
 import { get } from "../utilities/api";
@@ -47,14 +46,7 @@ export default class Welcome extends React.Component {
         <Text style={[styles.cWhite, styles.font16, styles.bgApp, styles.p20]}>Search Your Movies</Text>
         <SearchInput handleTextChange={this.handleTextChange} />
         {dataSource && dataSource.length > 0 &&
-          <FlatList
-            data={dataSource}
-            renderItem={({ item }) =>
-              <View style={{ flex: 1, flexDirection: 'row' }}>
-                <Text>{item.title}</Text>
-              </View>}
-            keyExtractor={(item, index) => index.toString()}
-          />
+          <SearchResultList dataSource={dataSource} />
         }
         <Text>{this.state.status}</Text>
       </View>
