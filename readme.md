@@ -55,3 +55,6 @@ The folder structure that you will have is :
 |    readme.md
 ```
 
+##Notes: 
+With genymotion, need to add path of android sdk in genymotion settings e.g /home/rekha/Android/Sdk
+
