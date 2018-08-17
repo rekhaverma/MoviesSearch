@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { TextInput } from 'react-native';
 
 export default class SearchInput extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <TextInput

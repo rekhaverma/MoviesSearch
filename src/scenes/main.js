@@ -8,6 +8,7 @@ import { get } from "../utilities/api";
 import { debounce } from "lodash";
 
 export default class Welcome extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,9 +18,10 @@ export default class Welcome extends React.Component {
     // Do Next call to API after 1 second while typing text.
     this.handleTextChange = debounce(this.handleTextChange, 1000);
   }
+
+
   // Get data from movies API and show data into list.
   handleTextChange = (text) => {
-    console.log("text11111", text)
     if (text) {
       get(`https://api.themoviedb.org/3/search/movie?api_key=${config.apiKey}&query=${text}`).then(result => {
         console.log("dhana tana", result.data.results)
