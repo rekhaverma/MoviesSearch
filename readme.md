@@ -24,15 +24,10 @@ The folder structure that you will have is :
 └─── src
 │   └─── components
 │   |        index.js
-│   |        reloadOnAppStateChange.js
-│   |   └─── icon
+│   |   └─── searchInput
 │   |   |       index.js
-│   |   └─── input
-│   |   |       errorView.js
+│   |   └─── searchResultList
 │   |   |       index.js
-│   |   |       inputStyle.js
-│   |   |       textInput.js
-│   |   |   
 │   └─── scenes
 │   |        index.js
 │   |        main.js
