@@ -25,26 +25,36 @@ export default class MovieBrowser extends React.Component {
 
   // Get data from movies API and show data into list.
   handleTextChange = (text) => {
-    let searchResults = MovieSearchService.getAll(text);
-    console.log("searchResults", searchResults)
-    searchResults.then((result) => {
+    if (text) {
+      let searchResults = MovieSearchService.getAll(text);
+
+      searchResults.then((result) => {
+        this.setState({
+          dataSource: result.data.results,
+          status: isEmpty(result.data.results) && I18n.t('noResultFound'),
+          errorText: ""
+        })
+      }).catch((error) => {
+        console.log("Promise Rejected", error.message);
+        this.setState({ errorText: error.message });
+      });
+    } else {
       this.setState({
-        dataSource: result.data.results,
-        status: isEmpty(result.data.results) && I18n.t('noResultFound'),
-        errorText: ""
+        dataSource: [],
+        status: '',
+        errorText: ''
       })
-    }).catch((error) => {
-      console.log("Promise Rejected", error.message);
-      this.setState({ errorText: error.message });
-    });
+    }
+
   }
 
   render() {
     const { dataSource } = this.state;
     return (
-      <View style={[{ flex: 1 }, styles.bgGray]}>
-        <Text style={[styles.cWhite, styles.font16, styles.bgApp, styles.p20]}>Search Your Movies</Text>
-        <SearchInput handleTextChange={this.handleTextChange} />
+      <View>
+        <View >
+          <SearchInput handleTextChange={this.handleTextChange} />
+        </View>
         <SearchResultList dataSource={dataSource} />
         <Text>{this.state.status}</Text>
         <Text>{this.state.errorText}</Text>

@@ -20,24 +20,16 @@ export default StyleSheet.create({
     paddingTop: isIos ? 40 : 20
   },
   searchSection: {
-    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    height: 60
+    borderBottomWidth: 1,
+    borderColor: '#000',
   },
   searchIcon: {
-    padding: 10,
-    borderWidth: 0.5,
-    borderColor: '#000',
-    height: 60
+    paddingTop: 15,
+    height: 60,
   },
   input: {
     flex: 1,
-    backgroundColor: '#fff',
-    color: '#424242',
-    borderWidth: 0.5,
-    borderColor: '#000',
-    height: 60
   },
   v_container: {
     flex: 1,
