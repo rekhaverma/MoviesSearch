@@ -19,6 +19,38 @@ export default StyleSheet.create({
     flex: 1,
     paddingTop: isIos ? 40 : 20
   },
+  searchSection: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height: 60
+  },
+  searchIcon: {
+    padding: 10,
+    borderWidth: 0.5,
+    borderColor: '#000',
+    height: 60
+  },
+  input: {
+    flex: 1,
+    backgroundColor: '#fff',
+    color: '#424242',
+    borderWidth: 0.5,
+    borderColor: '#000',
+    height: 60
+  },
+  v_container: {
+    flex: 1,
+    padding: 8,
+    flexDirection: 'column', // main axis
+    justifyContent: 'center', // main axis
+    alignItems: 'center', // cross axis
+    backgroundColor: COLOR.LIGHT_GRAY,
+  },
+  row_cell_timeplace: {
+    flex: 1,
+    flexDirection: 'column',
+  },
 
   w25: { width: 25 },
   w50: { width: 50 },

@@ -5,6 +5,7 @@ import config from "../../config";
 import styles from "../styles";
 import { get } from "../utilities/api";
 import { debounce } from "lodash";
+import MovieSearchService from "../services/movieSearch";
 
 export default class Welcome extends React.Component {
 
@@ -21,34 +22,28 @@ export default class Welcome extends React.Component {
 
   // Get data from movies API and show data into list.
   handleTextChange = (text) => {
-    if (text) {
-      get(`https://api.themoviedb.org/3/search/movie?api_key=${config.apiKey}&query=${text}`).then(result => {
-        console.log("dhana tana", result.data.results)
-        this.setState({
-          dataSource: result.data.results,
-          status: result.data.results && result.data.results.length == 0 ? "No result found" : ""
-        })
-      }).catch(function (error) {
-        console.log("Promise Rejected", error);
-      });
-    } else {
+    let searchResults = MovieSearchService.getAll(text);
+    console.log("searchResults", searchResults)
+    searchResults.then((result) => {
       this.setState({
-        dataSource: [],
-        status: ''
+        dataSource: result.data.results,
+        status: result.data.results && result.data.results.length == 0 ? "No result found" : "",
+        errorText: ""
       })
-    }
+    }).catch((error) => {
+      console.log("Promise Rejected", error.message);
+      this.setState({ errorText: error.message });
+    });
   }
 
   render() {
     const { dataSource } = this.state;
     return (
-      <View style={[{ flex: 1 }]}>
+      <View style={[{ flex: 1 }, styles.bgGray]}>
         <Text style={[styles.cWhite, styles.font16, styles.bgApp, styles.p20]}>Search Your Movies</Text>
         <SearchInput handleTextChange={this.handleTextChange} />
-        {dataSource && dataSource.length > 0 &&
-          <SearchResultList dataSource={dataSource} />
-        }
-        <Text>{this.state.status}</Text>
+        <SearchResultList dataSource={dataSource} />
+        <Text>{this.state.errorText}</Text>
       </View>
     );
   }
