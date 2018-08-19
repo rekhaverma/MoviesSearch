@@ -1,13 +1,16 @@
 import React from "react";
 import { Text, View } from "react-native";
+import { debounce, isEmpty } from "lodash";
+
 import { SearchInput, SearchResultList } from "../components";
 import config from "../../config";
 import styles from "../styles";
 import { get } from "../utilities/api";
-import { debounce } from "lodash";
 import MovieSearchService from "../services/movieSearch";
+import I18n from '../i18n';
 
-export default class Welcome extends React.Component {
+
+export default class MovieBrowser extends React.Component {
 
   constructor(props) {
     super(props);
@@ -27,7 +30,7 @@ export default class Welcome extends React.Component {
     searchResults.then((result) => {
       this.setState({
         dataSource: result.data.results,
-        status: result.data.results && result.data.results.length == 0 ? "No result found" : "",
+        status: isEmpty(result.data.results) && I18n.t('noResultFound'),
         errorText: ""
       })
     }).catch((error) => {
@@ -43,6 +46,7 @@ export default class Welcome extends React.Component {
         <Text style={[styles.cWhite, styles.font16, styles.bgApp, styles.p20]}>Search Your Movies</Text>
         <SearchInput handleTextChange={this.handleTextChange} />
         <SearchResultList dataSource={dataSource} />
+        <Text>{this.state.status}</Text>
         <Text>{this.state.errorText}</Text>
       </View>
     );
