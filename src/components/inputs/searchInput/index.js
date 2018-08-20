@@ -7,7 +7,7 @@ export default class SearchInput extends Component {
     render() {
         return (
             <View style={styles.searchSection}>
-                <VectorIcon size={30} style={styles.searchIcon} color="#000" type="EvilIcons" name="search" />
+                <VectorIcon size={20} style={styles.searchIcon} color="#000" type="EvilIcons" name="search" />
                 <TextInput
                     style={styles.input}
                     onChangeText={this.props.handleTextChange}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
+import { Header } from "react-native-elements";
 import { debounce, isEmpty } from "lodash";
 
 import { SearchInput, SearchResultList } from "../components";
@@ -51,7 +52,14 @@ export default class MovieBrowser extends React.Component {
   render() {
     const { dataSource } = this.state;
     return (
+
       <View>
+        <Header
+          placement="left"
+          leftComponent={{ icon: 'menu', color: '#fff' }}
+          centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
+          rightComponent={{ icon: 'home', color: '#fff' }}
+        />
         <View >
           <SearchInput handleTextChange={this.handleTextChange} />
         </View>

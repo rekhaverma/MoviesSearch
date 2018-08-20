@@ -25,11 +25,12 @@ export default StyleSheet.create({
     borderColor: '#000',
   },
   searchIcon: {
-    paddingTop: 15,
-    height: 60,
+    paddingTop: 5
   },
   input: {
     flex: 1,
+    height: 30,
+    paddingTop: 5
   },
   v_container: {
     flex: 1,
@@ -43,7 +44,28 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-
+  image: { height: 180, width: 180 },
+  titleData: {
+    color: '#333',
+    fontSize: 18,
+    paddingBottom: 5
+  },
+  releaseDate: {
+    fontSize: 12,
+    color: 'red',
+    paddingLeft: 0
+  },
+  overview: {
+    fontSize: 15,
+    padding: 20,
+    color: '#000',
+    width: 200,
+    height: 200
+  },
+  subWrapper: {
+    paddingTop: 0,
+    paddingLeft: 10
+  },
   w25: { width: 25 },
   w50: { width: 50 },
   w00: { width: 100 },
