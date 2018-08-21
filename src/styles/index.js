@@ -44,27 +44,53 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-  image: { height: 180, width: 180 },
+  image: {
+    height: 175,
+    width: 180
+  },
   titleData: {
-    color: '#333',
-    fontSize: 18,
-    paddingBottom: 5
+    fontSize: 19,
+    color: '#fff'
   },
   releaseDate: {
-    fontSize: 12,
-    color: 'red',
-    paddingLeft: 0
+    fontSize: 11,
+    color: '#fff',
+    paddingLeft: 0,
+    fontWeight: 'bold',
+    fontFamily: 'CourierNewPS-BoldItalicMT',
+    marginLeft: 8,
+    marginTop: 15,
+
   },
   overview: {
-    fontSize: 15,
-    padding: 20,
-    color: '#000',
-    width: 200,
-    height: 200
+    fontSize: 12,
+    paddingTop: 30,
+    width: 150,
+    height: 200,
+    color: '#D3D3D3',
+    paddingBottom: 0,
+    fontFamily: 'CourierNewPS-BoldItalicMT',
+    position: 'relative',
+    top: 10,
+    right: 85,
+  },
+  average: {
+    color: '#fff',
+    position: 'relative',
+    padding: 0,
+    paddingBottom: 14,
+    fontSize: 13
+
+  },
+  heartIcon: {
+    color: 'red',
+
   },
   subWrapper: {
-    paddingTop: 0,
-    paddingLeft: 10
+    paddingTop: 5,
+    paddingLeft: 10,
+    marginTop: -26,
+    fontFamily: 'CourierNewPS-BoldItalicMT',
   },
   w25: { width: 25 },
   w50: { width: 50 },

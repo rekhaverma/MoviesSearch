@@ -6,4 +6,5 @@ export default {
   ASSETS_URL: 'https://api.themoviedb.org/3/search/movie',
   BASE_URL: "https://image.tmdb.org/t/p/",
   POSTER_SIZE: "w500" || "w92" || "w154" || "w185" || "w342" || "w780" || "original"
+
 };

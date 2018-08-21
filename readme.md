@@ -1,6 +1,6 @@
 # Simple Movies Search App
 
-Repo Link: `https://github.com/rekhaverma/MoviesSearch`
+This is a simple React Native app which uses the TMDb (www.themoviedb.org) API to search for movies by name and displays the closest matches in a list. The movie rating, year of release and a short summary are also displayed.
 
 ## System Requirements
 1. Java Development Kit.
@@ -22,16 +22,22 @@ The folder structure that you will have is :
 └─── ios
 └─── node_modules
 └─── src
+│   └─── assets
 │   └─── components
-│   |        index.js
+│   └─── inputs
 │   |   └─── searchInput
 │   |   |       index.js
+│   └─── list
 │   |   └─── searchResultList
 │   |   |       index.js
+│   └─── index.js
+│   └─── constants
+│   └─── i18n
 │   └─── scenes
 │   |        index.js
 │   |        main.js
 │   |        routes.js
+│   └─── services
 │   └─── styles
 │   |        index.js
 │   └─── utilities

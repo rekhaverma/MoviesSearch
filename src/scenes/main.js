@@ -56,9 +56,7 @@ export default class MovieBrowser extends React.Component {
       <View>
         <Header
           placement="left"
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
+          centerComponent={{ text: 'TMDB Movie Finder', style: { color: '#fff' } }}
         />
         <View >
           <SearchInput handleTextChange={this.handleTextChange} />
