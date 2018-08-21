@@ -1,4 +1,4 @@
-# Simple Movies Search App
+# TMDb Movie Search App
 
 This is a simple React Native app which uses the TMDb (www.themoviedb.org) API to search for movies by name and displays the closest matches in a list. The movie rating, year of release and a short summary are also displayed.
 
